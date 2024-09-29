@@ -33,7 +33,7 @@ const OrderBook = ({ initialProduct }: { initialProduct: Product[] }) => {
   }, [products, selectedProduct]);
 
   return (
-    <div className="md:p-4 p-2">
+    <div className="md:p-4 p-2 ">
       <SearchProduct />
       <h2 className="text-lg font-semibold mb-2">Order Book</h2>
       <Tabs defaultValue="default">
