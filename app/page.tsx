@@ -57,9 +57,9 @@ export default function Home() {
   }, [setProducts, setSelectedProduct, selectedProduct]);
 
   return (
-    <div className="min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)] flex justify-center items-center">
+    <div className="min-h-screen p-4 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)] flex justify-center items-center">
       <div className="max-w-[1200px] w-full bg-zinc-900 rounded-lg shadow-lg overflow-hidden text-white">
-        <div className="p-4">
+        <div className="md:p-4 p-2">
           <SearchProduct />
           <h2 className="text-lg font-semibold mb-2">Order Book</h2>
           <Tabs defaultValue="default">

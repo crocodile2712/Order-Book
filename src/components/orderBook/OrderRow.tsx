@@ -30,7 +30,7 @@ export const OrderRow = ({
     <tr
       key={key}
       className={cn(
-        "text-sm animate-glow  hover:border-white hover:border-dashed",
+        "md:text-sm text-xs animate-glow hover:border-white hover:border-dashed",
         type === "bid"
           ? "text-green-400 hover:border-b"
           : "text-red-400 hover:border-t"
