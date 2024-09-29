@@ -15,9 +15,8 @@ import useProductStore from "@/src/libs/stores/products";
 import { useWebSocket } from "@/src/libs/hooks/useWebSocket";
 
 const OrderBook = ({ initialProduct }: { initialProduct: Product[] }) => {
-  const { setProducts, selectedProduct, setSelectedProduct } = useProductStore(
-    (state) => state
-  );
+  const { setProducts, selectedProduct, setSelectedProduct, products } =
+    useProductStore((state) => state);
 
   const { bids, asks, isLoading } = useWebSocket(
     selectedProduct?.product_id ?? ""
@@ -28,10 +27,10 @@ const OrderBook = ({ initialProduct }: { initialProduct: Product[] }) => {
   }, [initialProduct]);
 
   useEffect(() => {
-    if (!selectedProduct) {
-      setSelectedProduct(initialProduct[0]);
+    if (!selectedProduct?.product_id && products.length > 0) {
+      setSelectedProduct(products[0]);
     }
-  }, [initialProduct, selectedProduct]);
+  }, [products, selectedProduct]);
 
   return (
     <div className="md:p-4 p-2">
